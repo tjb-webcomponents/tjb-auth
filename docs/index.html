@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>tjb-auth</title>
+    <link rel="stylesheet" href="btn.css" />
+    <style>
+      body {
+        text-align: center;
+      }
+      .example {
+        margin: auto;
+        font-family: sans-serif;
+        display: inline-block;
+        text-align: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>tjb-auth</h1>
+
+    <h2>Example:</h2>
+
+    <div class="example">
+      <tjb-auth
+        postbody="{ 'lol': 'rofl' }"
+        loginurl="https://jsonplaceholder.typicode.com/users"
+        registerurl="https://jsonplaceholder.typicode.com/users"
+        mailurl="https://jsonplaceholder.typicode.com/users"
+        reseturl="https://jsonplaceholder.typicode.com/users"
+        verifyurl="https://jsonplaceholder.typicode.com/users"
+        showlogin="true"
+      >
+        <input
+          class="btn btn--cta btn--fs"
+          value="LOGIN"
+          type="submit"
+          slot="submit-login"
+        />
+        <input
+          class="btn btn--cta btn--fs"
+          value="REGISTER"
+          type="submit"
+          slot="submit-register"
+        />
+        <input
+          class="btn btn--cta btn--fs"
+          value="SEND"
+          type="submit"
+          slot="submit-reset"
+        />
+        <input
+          class="btn btn--cta btn--fs"
+          value="VERIFY"
+          type="submit"
+          slot="submit-verify"
+        />
+      </tjb-auth>
+
+      <script src="tjb-auth.js" type="module"></script>
+    </div>
+  </body>
+</html>
