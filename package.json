@@ -1,6 +1,6 @@
 {
   "name": "tjb-auth",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "awesome authentification webcomponent",
   "main": "docs/tjb-auth.min.js",
   "directories": {
