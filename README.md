@@ -109,16 +109,24 @@ All attributes:
 
 ## Events
 
-| name             | properties | description                                                                                                        |
-| ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| verify-success   | Object     | Triggers when the email verification call returned a success. Holds an Object which is the body of that POST call. |
-| verify-error     | Object     | Triggers when the email verification call returned an error. Holds an Object which is the body of that POST call.  |
-| reset-success    | Object     | Triggers when the password reset call returned a success. Holds an Object which is the body of that POST call.     |
-| reset-error      | Object     | Triggers when the password reset call returned a error. Holds an Object which is the body of that POST call.       |
-| register-success | Object     | Triggers when the registration call returned a success. Holds an Object which is the body of that POST call.       |
-| register-error   | Object     | Triggers when the registration call returned a error. Holds an Object which is the body of that POST call.         |
-| login-success    | Object     | Triggers when the login call returned a success. Holds an Object which is the body of that POST call.              |
-| login-error      | Object     | Triggers when the login call returned a error. Holds an Object which is the body of that POST call.                |
+| name             | event details                                                   | description                                                                                                                                   |
+| ---------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| success          | - event (@Object) <br> -- area (@String) <br> -- resp (@Object) | Triggers when any call was successful. Holds an Object which is has the name of the success calling element and the answer of that POST call. |
+| error            | - event (@Object) <br> -- area (@String) <br> -- resp (@Object) | Triggers when any call had an error. Holds an Object which is has the name of the error element and the answer of that POST call.             |
+| verify           | - body (@Object)                                                | triggered when user sends email verification request. Event is an object which contains all information for potential POST call.              |
+| verify-sendmail  | - body (@Object)                                                | triggered when an email request would be send. Event is an object which contains all information for potential POST call.                     |
+| verify-success   | - resp (@Object)                                                | Triggers when the email verification call returned a success. Holds an Object which is the answer of that POST call.                          |
+| verify-error     | - resp (@Object)                                                | Triggers when the email verification call returned an error. Holds an Object which is the answer of that POST call.                           |
+| reset            | - body (@Object)                                                | triggered when user sends passowrd reset request. Event is an object which contains all information for potential POST call.                  |
+| reset-sendmail   | - body (@Object)                                                | triggered when an email request would be send. Event is an object which contains all information for potential POST call.                     |
+| reset-success    | - resp (@Object)                                                | Triggers when the password reset call returned a success. Holds an Object which is the answer of that POST call.                              |
+| reset-error      | - resp (@Object)                                                | Triggers when the password reset call returned a error. Holds an Object which is the answer of that POST call.                                |
+| register         | - body (@Object)                                                | triggered when user sends register request. Event is an object which contains all information for potential POST call.                        |
+| register-success | - resp (@Object)                                                | Triggers when the registration call returned a success. Holds an Object which is the answer of that POST call.                                |
+| register-error   | - resp (@Object)                                                | Triggers when the registration call returned a error. Holds an Object which is the answer of that POST call.                                  |
+| login            | - body (@Object)                                                | triggered when user sends login request. Event is an object which contains all information for potential POST call.                           |
+| login-success    | - resp (@Object)                                                | Triggers when the login call returned a success. Holds an Object which is the answer of that POST call.                                       |
+| login-error      | - resp (@Object)                                                | Triggers when the login call returned a error. Holds an Object which is the answer of that POST call.                                         |
 
 ## Styling
 

@@ -100,8 +100,9 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "login")}"
         onerror="${e => this.handleError(e, "login")}"
+        onlogin="${e => this.dispatchEvent("login", e)}"
         ${this.showlogin ? `` : `style="display:none"`}
-        postbody="${this.postbody}"
+        postbody="${this.postbody || this.loginpostbody}"
         posturl="${this.loginurl}"
       >
         <slot name="submit-login" slot="submit"></slot>
@@ -113,8 +114,9 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "register")}"
         onerror="${e => this.handleError(e, "register")}"
+        onregister="${e => this.dispatchEvent("register", e)}"
         ${this.showregister ? `` : `style="display:none"`}
-        postbody="${this.postbody}"
+        postbody="${this.postbody || this.registerpostbody}"
         posturl="${this.registerurl}"
       >
         <slot name="submit-register" slot="submit"></slot>
@@ -126,8 +128,10 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "reset")}"
         onerror="${e => this.handleError(e, "reset")}"
+        onreset="${e => this.dispatchEvent("reset", e)}"
+        onsendmail="${e => this.dispatchEvent("reset-sendmail", e)}"
         ${this.showreset ? `` : `style="display:none"`}
-        postbody="${this.postbody}"
+        postbody="${this.postbody || this.resetpostbody}"
         mailurl="${this.mailurl}"
         posturl="${this.reseturl}"
       >
@@ -140,8 +144,10 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "verify")}"
         onerror="${e => this.handleError(e, "verify")}"
+        onverify="${e => this.dispatchEvent("verify", e)}"
+        onsendmail="${e => this.dispatchEvent("verify-sendmail", e)}"
         ${this.showverify ? `` : `style="display:none"`}
-        postbody="${this.postbody}"
+        postbody="${this.postbody || this.verifypostbody}"
         mailurl="${this.mailurl}"
         posturl="${this.verifyurl}"
       >
@@ -164,10 +170,14 @@ class tjbAuth extends WebComponent() {
     return [
       "postbody",
       "loginurl",
+      "loginpostbody",
       "registerurl",
+      "registerpostbody",
       "mailurl",
       "reseturl",
+      "resetpostbody",
       "verifyurl",
+      "verifypostbody",
       "showregister",
       "showlogin",
       "showreset",
