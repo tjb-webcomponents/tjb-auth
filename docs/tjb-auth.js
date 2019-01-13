@@ -220,11 +220,11 @@ class tjbAuth extends WebComponent() {
   ////////////////////////////////////////////////////////////
 
   error(area, message) {
-    this[`${area}Node`].error(message);
+    return this[`${area}Node`].error(message);
   }
 
   success(area, message) {
-    this[`${area}Node`].success(message);
+    return this[`${area}Node`].success(message);
   }
 }
 
