@@ -222,11 +222,13 @@ class tjbAuth extends WebComponent() {
 
     this._success = { area, event };
     this.dispatchEvent(`${area}-success`, event);
+    this.dispatchEvent("success", { area, event });
   }
 
   handleError(event, area) {
     this._error = { area, event };
     this.dispatchEvent(`${area}-error`, event);
+    this.dispatchEvent("error", { area, event });
   }
 }
 
