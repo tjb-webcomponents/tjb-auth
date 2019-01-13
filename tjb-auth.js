@@ -240,6 +240,17 @@ class tjbAuth extends WebComponent() {
     this.dispatchEvent(`${area}-error`, event.detail);
     this.dispatchEvent("error", { area, event: event.detail });
   }
+
+  // Exposed Methods
+  ////////////////////////////////////////////////////////////
+
+  error(area, message) {
+    this[`${area}Node`].error(message);
+  }
+
+  success(area, message) {
+    this[`${area}Node`].success(message);
+  }
 }
 
 customElements.define("tjb-auth", tjbAuth);

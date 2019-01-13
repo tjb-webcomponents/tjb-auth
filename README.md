@@ -111,6 +111,13 @@ All attributes:
 | showreset        | showreset="true"                                         | wheter or not to show the reset panel (will hide all other views)                                                                                                                             |
 | showverify       | showverify="true"                                        | wheter or not to show the email verification panel (will hide all other views)                                                                                                                |
 
+### Methods
+
+| method  | example                                                                                          | description                                          |
+| ------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
+| error   | .error(area, message) <br> - area @String [login/register/reset/verify] <br> - message @String   | Sets the respective widget (area) in an error state  |
+| success | .success(area, message) <br> - area @String [login/register/reset/verify] <br> - message @String | Sets the respective widget (area) in a success state |
+
 ## Events
 
 | name             | event details                                                   | description                                                                                                                                   |
