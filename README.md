@@ -107,6 +107,19 @@ All attributes:
 | showreset    | showreset="true"                                         | wheter or not to show the reset panel (will hide all other views)              |
 | showverify   | showverify="true"                                        | wheter or not to show the email verification panel (will hide all other views) |
 
+## Events
+
+| name             | properties | description                                                                                                        |
+| ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| verify-success   | Object     | Triggers when the email verification call returned a success. Holds an Object which is the body of that POST call. |
+| verify-error     | Object     | Triggers when the email verification call returned an error. Holds an Object which is the body of that POST call.  |
+| reset-success    | Object     | Triggers when the password reset call returned a success. Holds an Object which is the body of that POST call.     |
+| reset-error      | Object     | Triggers when the password reset call returned a error. Holds an Object which is the body of that POST call.       |
+| register-success | Object     | Triggers when the registration call returned a success. Holds an Object which is the body of that POST call.       |
+| register-error   | Object     | Triggers when the registration call returned a error. Holds an Object which is the body of that POST call.         |
+| login-success    | Object     | Triggers when the login call returned a success. Holds an Object which is the body of that POST call.              |
+| login-error      | Object     | Triggers when the login call returned a error. Holds an Object which is the body of that POST call.                |
+
 ## Styling
 
 Default public values:

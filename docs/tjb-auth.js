@@ -95,6 +95,7 @@ class tjbAuth extends WebComponent() {
       <tjb-auth-login
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "login")}"
+        onerror="${e => this.handleError(e, "login")}"
         ${this.showlogin ? `` : `style="display:none"`}
         postbody="${this.postbody}"
         posturl="${this.loginurl}"
@@ -107,6 +108,7 @@ class tjbAuth extends WebComponent() {
       <tjb-auth-register
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "register")}"
+        onerror="${e => this.handleError(e, "register")}"
         ${this.showregister ? `` : `style="display:none"`}
         postbody="${this.postbody}"
         posturl="${this.registerurl}"
@@ -119,6 +121,7 @@ class tjbAuth extends WebComponent() {
       <tjb-auth-reset
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "reset")}"
+        onerror="${e => this.handleError(e, "reset")}"
         ${this.showreset ? `` : `style="display:none"`}
         postbody="${this.postbody}"
         mailurl="${this.mailurl}"
@@ -132,6 +135,7 @@ class tjbAuth extends WebComponent() {
       <tjb-auth-verify
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "verify")}"
+        onerror="${e => this.handleError(e, "verify")}"
         ${this.showverify ? `` : `style="display:none"`}
         postbody="${this.postbody}"
         mailurl="${this.mailurl}"
@@ -192,10 +196,16 @@ class tjbAuth extends WebComponent() {
 
     if (area === "register") {
       const email = this.registerNode.emailInput.value;
-      this.handleRedirect({ target: "verify" });
-      console.log("email", email);
       this.verifyNode.email = email;
     }
+
+    this._success = { area, event };
+    this.dispatchEvent(`${area}-success`, event);
+  }
+
+  handleError(event, area) {
+    this._error = { area, event };
+    this.dispatchEvent(`${area}-error`, event);
   }
 }
 
