@@ -100,7 +100,7 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "login")}"
         onerror="${e => this.handleError(e, "login")}"
-        onlogin="${e => this.dispatchEvent("login", e)}"
+        onlogin="${e => this.dispatchEvent("login", e.detail)}"
         ${this.showlogin ? `` : `style="display:none"`}
         postbody="${this.postbody || this.loginpostbody}"
         posturl="${this.loginurl}"
@@ -114,7 +114,7 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "register")}"
         onerror="${e => this.handleError(e, "register")}"
-        onregister="${e => this.dispatchEvent("register", e)}"
+        onregister="${e => this.dispatchEvent("register", e.detail)}"
         ${this.showregister ? `` : `style="display:none"`}
         postbody="${this.postbody || this.registerpostbody}"
         posturl="${this.registerurl}"
@@ -128,8 +128,8 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "reset")}"
         onerror="${e => this.handleError(e, "reset")}"
-        onreset="${e => this.dispatchEvent("reset", e)}"
-        onsendmail="${e => this.dispatchEvent("reset-sendmail", e)}"
+        onreset="${e => this.dispatchEvent("reset", e.detail)}"
+        onsendmail="${e => this.dispatchEvent("reset-sendmail", e.detail)}"
         ${this.showreset ? `` : `style="display:none"`}
         postbody="${this.postbody || this.resetpostbody}"
         mailurl="${this.mailurl}"
@@ -144,8 +144,8 @@ class tjbAuth extends WebComponent() {
         onredirect="${e => this.handleRedirect(e)}"
         onsuccess="${e => this.handleSuccess(e, "verify")}"
         onerror="${e => this.handleError(e, "verify")}"
-        onverify="${e => this.dispatchEvent("verify", e)}"
-        onsendmail="${e => this.dispatchEvent("verify-sendmail", e)}"
+        onverify="${e => this.dispatchEvent("verify", e.detail)}"
+        onsendmail="${e => this.dispatchEvent("verify-sendmail", e.detail)}"
         ${this.showverify ? `` : `style="display:none"`}
         postbody="${this.postbody || this.verifypostbody}"
         mailurl="${this.mailurl}"
@@ -231,14 +231,14 @@ class tjbAuth extends WebComponent() {
     }
 
     this._success = { area, event };
-    this.dispatchEvent(`${area}-success`, event);
-    this.dispatchEvent("success", { area, event });
+    this.dispatchEvent(`${area}-success`, event.detail);
+    this.dispatchEvent("success", { area, event: event.detail });
   }
 
   handleError(event, area) {
     this._error = { area, event };
-    this.dispatchEvent(`${area}-error`, event);
-    this.dispatchEvent("error", { area, event });
+    this.dispatchEvent(`${area}-error`, event.detail);
+    this.dispatchEvent("error", { area, event: event.detail });
   }
 }
 
