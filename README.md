@@ -94,18 +94,22 @@ Example:
 
 All attributes:
 
-| attribute    | example                                                  | description                                                                    |
-| ------------ | -------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| postbody     | postbody="{ 'lol': 'rofl' }"                             | Aditional object fields that will be added to any `POST` request.              |
-| loginurl     | loginurl="https://jsonplaceholder.typicode.com/users"    | The `POST` `URL` where the login request should go                             |
-| registerurl  | registerurl="https://jsonplaceholder.typicode.com/users" | The `POST` `URL` where the register request should go                          |
-| mailurl      | mailurl="https://jsonplaceholder.typicode.com/users"     | The `POST` `URL` where the email sending trigger request should go             |
-| reseturl     | reseturl="https://jsonplaceholder.typicode.com/users"    | The `POST` `URL` where the reset request should go                             |
-| verifyurl    | verifyurl="https://jsonplaceholder.typicode.com/users"   | The `POST` `URL` where the verification request should go                      |
-| showlogin    | showlogin="false"                                        | wheter or not to show the login panel (will hide all other views)              |
-| showregister | showregister="true"                                      | wheter or not to show the registration panel (will hide all other views)       |
-| showreset    | showreset="true"                                         | wheter or not to show the reset panel (will hide all other views)              |
-| showverify   | showverify="true"                                        | wheter or not to show the email verification panel (will hide all other views) |
+| attribute        | example                                                  | description                                                                                                                                                                                   |
+| ---------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| postbody         | postbody="{ 'lol': 'rofl' }"                             | Aditional object fields that will be added to any `POST` request. This will be applied to all requests _unless_ there is already a specific postbody on some request, then it will be ditched |
+| loginpostbody    | postbody="{ 'lol': 'rofl' }"                             | Aditional object fields that will be added to any `POST` request.                                                                                                                             |
+| loginurl         | loginurl="https://jsonplaceholder.typicode.com/users"    | The `POST` `URL` where the login request should go                                                                                                                                            |
+| registerpostbody | postbody="{ 'lol': 'rofl' }"                             | Aditional object fields that will be added to any `POST` request.                                                                                                                             |
+| registerurl      | registerurl="https://jsonplaceholder.typicode.com/users" | The `POST` `URL` where the register request should go                                                                                                                                         |
+| mailurl          | mailurl="https://jsonplaceholder.typicode.com/users"     | The `POST` `URL` where the email sending trigger request should go                                                                                                                            |
+| resetpostbody    | postbody="{ 'lol': 'rofl' }"                             | Aditional object fields that will be added to any `POST` request.                                                                                                                             |
+| reseturl         | reseturl="https://jsonplaceholder.typicode.com/users"    | The `POST` `URL` where the reset request should go                                                                                                                                            |
+| verifypostbody   | postbody="{ 'lol': 'rofl' }"                             | Aditional object fields that will be added to any `POST` request.                                                                                                                             |
+| verifyurl        | verifyurl="https://jsonplaceholder.typicode.com/users"   | The `POST` `URL` where the verification request should go                                                                                                                                     |
+| showlogin        | showlogin="false"                                        | wheter or not to show the login panel (will hide all other views)                                                                                                                             |
+| showregister     | showregister="true"                                      | wheter or not to show the registration panel (will hide all other views)                                                                                                                      |
+| showreset        | showreset="true"                                         | wheter or not to show the reset panel (will hide all other views)                                                                                                                             |
+| showverify       | showverify="true"                                        | wheter or not to show the email verification panel (will hide all other views)                                                                                                                |
 
 ## Events
 
